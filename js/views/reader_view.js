@@ -420,7 +420,7 @@ var ReaderView = function (options) {
 
 
         resetCurrentView();
-
+        readiumOperations.trackOpenBook(ReadiumSDK.reader.metadata()['title']); 
         if (openBookData.settings) {
             self.updateSettings(openBookData.settings);
         }
@@ -500,7 +500,7 @@ var ReaderView = function (options) {
      * Takes to account the page progression direction to decide to flip to prev or next page.
      */
     this.openPageLeft = function () {
-
+	console.log(_package);
         if (_package.spine.isLeftToRight()) {
             self.openPagePrev();
         }
@@ -514,7 +514,8 @@ var ReaderView = function (options) {
      * Takes to account the page progression direction to decide to flip to prev or next page.
      */
     this.openPageRight = function () {
-
+       console.log(_package);
+       readiumOperations.trackTurnPageForward(ReadiumSDK.reader.metadata()['title']);
         if (_package.spine.isLeftToRight()) {
             self.openPageNext();
         }
