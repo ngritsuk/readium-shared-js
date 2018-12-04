@@ -501,6 +501,7 @@ var ReaderView = function (options) {
      */
     this.openPageLeft = function () {
 	console.log(_package);
+	self.emit(Globals.Events.PAGE_BACKWARD_TURNED);
         if (_package.spine.isLeftToRight()) {
             self.openPagePrev();
         }
@@ -515,7 +516,7 @@ var ReaderView = function (options) {
      */
     this.openPageRight = function () {
        console.log(_package);
-       self.emit(Globals.Events.PAGE_FORWARD_TURNED, status);
+       self.emit(Globals.Events.PAGE_FORWARD_TURNED);
         if (_package.spine.isLeftToRight()) {
             self.openPageNext();
         }

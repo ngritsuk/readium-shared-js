@@ -120,7 +120,11 @@ var Globals = {
         /**
          * @event
          */
-        PAGE_FORWARD_TURNED: "PageForwardTurned",        
+        PAGE_FORWARD_TURNED: "PageForwardTurned",
+	/**
+	 * @event
+	 */
+        PAGE_BACKWARD_TURNED: "PageBackwardTurned",
     },
     /**
      * Internal Events
