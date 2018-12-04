@@ -3,10 +3,10 @@ define(['readium_shared_js/globals', 'readium_js_plugins', 'jquery'], function (
         var self = this;
         if (typeof readiumOperations !== "undefined"){
         api.reader.on(Globals.Events.BOOK_OPENED, function ($iframe, spineItem) {
-          readiumOperations.trackOpenBook(Globals.reader.metadata()['title']);
+          readiumOperations.trackOpenBook(JSON.stringify(Globals.reader.metadata()));
           });
         api.reader.on(Globals.Events.PAGE_FORWARD_TURNED, function ($iframe, spineItem) {
-          readiumOperations.trackTurnPageForward(Globals.reader.metadata()['title']);
+          readiumOperations.trackTurnPageForward(JSON.stringify(Globals.reader.metadata()));
         })
         }
     });

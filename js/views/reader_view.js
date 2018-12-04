@@ -420,7 +420,7 @@ var ReaderView = function (options) {
 
 
         resetCurrentView();
-        self.emit(Globals.Events.BOOK_OPENED, status);
+        self.emit(Globals.Events.BOOK_OPENED);
         if (openBookData.settings) {
             self.updateSettings(openBookData.settings);
         }
